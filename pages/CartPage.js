@@ -7,7 +7,9 @@ export class CartPage {
   }
 
   async getProductNames() {
-    const products = this.page.locator("#tbodyid tr td:nth-child(2)");
+    const products = this.page.locator("#tbodyid td:nth-child(2)");
+    await products.first().waitFor();
+    console.log(await products.allTextContents());
     return await products.allTextContents();
   }
 
