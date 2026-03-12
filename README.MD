@@ -18,35 +18,6 @@ The framework follows the **Page Object Model (POM)** design pattern for better 
 
 ---
 
-## Project Structure
-
-playwright-ecommerce-automation
-│
-├── pages
-│ ├── LoginPage.js
-│ ├── HomePage.js
-│ ├── ProductPage.js
-│ ├── CartPage.js
-│ └── CheckoutPage.js
-│
-├── tests
-│ ├── login.spec.js
-│ ├── addToCart.spec.js
-│ ├── cartValidation.spec.js
-│ ├── purchaseFlow.spec.js
-│ ├── deleteFromCart.spec.js
-│ └── categoryFilter.spec.js
-│
-├── utils
-│ └── excelReader.js
-│
-├── test-data
-│ └── orderData.xlsx
-│
-├── playwright.config.js
-├── package.json
-└── README.md
-
 ---
 
 ## Features
