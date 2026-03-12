@@ -8,7 +8,7 @@ export class LoginPage {
   }
 
   async gotoLoginPage() {
-    await this.page.goto("https://demoblaze.com/");
+    await this.page.goto("/");
   }
 
   async login(username, password) {

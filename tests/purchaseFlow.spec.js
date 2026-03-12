@@ -3,34 +3,32 @@ const { HomePage } = require("../pages/HomePage");
 const { ProductPage } = require("../pages/ProductPage");
 const { CartPage } = require("../pages/CartPage");
 const { CheckoutPage } = require("../pages/CheckoutPage");
+const { readExcel } = require("../utils/excelReader");
 
-test("complete purchase flow", async ({ page }) => {
-  const home = new HomePage(page);
-  const product = new ProductPage(page);
-  const cart = new CartPage(page);
-  const checkout = new CheckoutPage(page);
+const testData = readExcel("./test-data/orderData.xlsx", "Sheet1");
 
-  await home.navigateToHome();
-  await home.selectProduct("MacBook air");
+testData.forEach((data) => {
+  test(`complete purchase flow for ${data.name} `, async ({ page }) => {
+    const home = new HomePage(page);
+    const product = new ProductPage(page);
+    const cart = new CartPage(page);
+    const checkout = new CheckoutPage(page);
 
-  page.once("dialog", (dialog) => dialog.accept());
-  await product.addProductToCart();
+    await home.navigateToHome();
+    await home.selectProduct(`${data.product}`);
 
-  await home.goToCart();
+    page.once("dialog", (dialog) => dialog.accept());
+    await product.addProductToCart();
 
-  await cart.placeOrder();
+    await home.goToCart();
 
-  await checkout.fillCheckoutForm({
-    name: "John",
-    country: "India",
-    city: "Bangalore",
-    card: "123456789",
-    month: "06",
-    year: "2026",
+    await cart.placeOrder();
+
+    await checkout.fillCheckoutForm(data);
+
+    await checkout.purchaseOrder();
+
+    const message = await checkout.getConfirmationText();
+    expect(message).toContain("Thank you for your purchase");
   });
-
-  await checkout.purchaseOrder();
-
-  const message = await checkout.getConfirmationText();
-  expect(message).toContain("Thank you for your purchase");
 });

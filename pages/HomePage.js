@@ -8,7 +8,7 @@ export class HomePage {
   }
 
   async navigateToHome() {
-    await this.page.goto("https://demoblaze.com");
+    await this.page.goto("/");
   }
 
   async selectProduct(productName) {

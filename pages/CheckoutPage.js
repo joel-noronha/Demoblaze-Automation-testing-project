@@ -18,9 +18,9 @@ export class CheckoutPage {
     await this.nameInput.fill(orderDetails.name);
     await this.countryInput.fill(orderDetails.country);
     await this.cityInput.fill(orderDetails.city);
-    await this.cardInput.fill(orderDetails.card);
-    await this.monthInput.fill(orderDetails.month);
-    await this.yearInput.fill(orderDetails.year);
+    await this.cardInput.fill(String(orderDetails.card));
+    await this.monthInput.fill(String(orderDetails.month));
+    await this.yearInput.fill(String(orderDetails.year));
   }
 
   async purchaseOrder() {
