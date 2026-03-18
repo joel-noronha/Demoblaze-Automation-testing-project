@@ -1,34 +1,32 @@
-const { test, expect } = require("@playwright/test");
-const { HomePage } = require("../pages/HomePage");
-const { ProductPage } = require("../pages/ProductPage");
-const { CartPage } = require("../pages/CartPage");
-const { CheckoutPage } = require("../pages/CheckoutPage");
+const { test, expect } = require("../fixtures/base");
+// const { expect } = require("@playwright/test");
 const { readExcel } = require("../utils/excelReader");
 
 const testData = readExcel("./test-data/orderData.xlsx", "Sheet1");
 
 testData.forEach((data) => {
-  test(`complete purchase flow for ${data.name} `, async ({ page }) => {
-    const home = new HomePage(page);
-    const product = new ProductPage(page);
-    const cart = new CartPage(page);
-    const checkout = new CheckoutPage(page);
-
-    await home.navigateToHome();
-    await home.selectProduct(`${data.product}`);
+  test(`complete purchase flow for ${data.name} `, async ({
+    page,
+    homePage,
+    cartPage,
+    checkoutPage,
+    productPage,
+  }) => {
+    await homePage.navigateToHome();
+    await homePage.selectProduct(`${data.product}`);
 
     page.once("dialog", (dialog) => dialog.accept());
-    await product.addProductToCart();
+    await productPage.addProductToCart();
 
-    await home.goToCart();
+    await homePage.goToCart();
 
-    await cart.placeOrder();
+    await cartPage.placeOrder();
 
-    await checkout.fillCheckoutForm(data);
+    await checkoutPage.fillCheckoutForm(data);
 
-    await checkout.purchaseOrder();
+    await checkoutPage.purchaseOrder();
 
-    const message = await checkout.getConfirmationText();
+    const message = await checkoutPage.getConfirmationText();
     expect(message).toContain("Thank you for your purchase");
   });
 });

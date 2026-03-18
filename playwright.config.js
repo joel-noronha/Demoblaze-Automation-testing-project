@@ -36,8 +36,18 @@ export default defineConfig({
   /* Configure projects for major browsers */
   projects: [
     {
-      name: "chromium",
+      name: "setup",
       use: { ...devices["Desktop Chrome"] },
+      testMatch: /.*\.setup\.js/,
+    },
+    {
+      name: "after-setup",
+      use: {
+        ...devices["Desktop Chrome"],
+        storageState: ".auth/user.json",
+      },
+      testMatch: /purchaseFlow\.spec\.js/,
+      dependencies: ["setup"],
     },
 
     // {
