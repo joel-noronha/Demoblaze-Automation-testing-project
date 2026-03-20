@@ -1,10 +1,8 @@
 const { test, expect } = require("../fixtures/base");
-// const { expect } = require("@playwright/test");
-const { readExcel } = require("../utils/excelReader");
+const { getTestData } = require("../utils/dataProvider");
 
-const testData = readExcel("./test-data/orderData.xlsx", "Sheet1");
-
-testData.forEach((data) => {
+const testData = getTestData("orderData");
+for (const data of testData) {
   test(`complete purchase flow for ${data.name} `, async ({
     page,
     homePage,
@@ -29,4 +27,4 @@ testData.forEach((data) => {
     const message = await checkoutPage.getConfirmationText();
     expect(message).toContain("Thank you for your purchase");
   });
-});
+}

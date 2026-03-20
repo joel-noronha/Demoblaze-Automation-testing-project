@@ -1,0 +1,20 @@
+[
+  {
+    "name": "Rahul",
+    "product": "Phone",
+    "country": "India",
+    "city": "Mumbai",
+    "creditCard": "5555555555554444",
+    "month": "07",
+    "year": "2027"
+  },
+  {
+    "name": "Sneha",
+    "product": "Monitor",
+    "country": "India",
+    "city": "Hyderabad",
+    "creditCard": "4000123412341234",
+    "month": "11",
+    "year": "2029"
+  }
+]

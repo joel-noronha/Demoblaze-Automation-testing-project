@@ -46,7 +46,8 @@ export default defineConfig({
         ...devices["Desktop Chrome"],
         storageState: ".auth/user.json",
       },
-      testMatch: /purchaseFlow\.spec\.js/,
+      // testMatch: /purchaseFlow\.spec\.js/,
+      testMatch: /.*\.spec\.js/,
       dependencies: ["setup"],
     },
 
