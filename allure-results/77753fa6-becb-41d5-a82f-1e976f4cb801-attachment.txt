@@ -1,0 +1,13 @@
+Original: {
+  id: 'c22b47eb-e05d-4562-7419-aa894a74010d',
+  cookie: 'VGVzdC11c2VyLWpvZWwxNzc1MDM0',
+  prod_id: 1,
+  flag: true
+}
+Modified: {
+  id: 'c22b47eb-e05d-4562-7419-aa894a74010d',
+  cookie: 'VGVzdC11c2VyLWpvZWwxNzc1MDM0',
+  prod_id: 3,
+  flag: true
+}
+Cart Products: []
