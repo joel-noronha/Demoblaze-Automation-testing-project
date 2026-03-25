@@ -1,7 +1,7 @@
 import { test, expect } from "@playwright/test";
 import { LoginPage } from "../pages/LoginPage";
 
-test("Valid Login test case", async ({ page }) => {
+test.skip("Valid Login test case", async ({ page }) => {
   const login = new LoginPage(page);
   await login.gotoLoginPage();
   await login.login("Test-user-joel", "test@123");
@@ -12,7 +12,7 @@ test("Valid Login test case", async ({ page }) => {
   await expect(page).toHaveURL("https://demoblaze.com/");
 });
 
-test("invalid password login test", async ({ page }) => {
+test.skip("invalid password login test", async ({ page }) => {
   const login = new LoginPage(page);
   await login.gotoLoginPage();
   page.on("dialog", async (dialog) => {

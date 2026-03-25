@@ -1,4 +1,4 @@
-import { test as setup, expect } from "../fixtures/base";
+import { test as setup, expect } from "../../fixtures/base";
 
 setup("Valid Login test case", async ({ loginPage, page }) => {
   await loginPage.gotoLoginPage();
