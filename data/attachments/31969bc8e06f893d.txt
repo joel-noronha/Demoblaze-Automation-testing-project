@@ -1,0 +1,13 @@
+Original: {
+  id: 'aba71ae5-5e85-227e-8df5-f8b19880a47d',
+  cookie: 'VGVzdC11c2VyLWpvZWwxNzc1MDM0',
+  prod_id: 1,
+  flag: true
+}
+Modified: {
+  id: 'aba71ae5-5e85-227e-8df5-f8b19880a47d',
+  cookie: 'VGVzdC11c2VyLWpvZWwxNzc1MDM0',
+  prod_id: 3,
+  flag: true
+}
+Cart Products: []

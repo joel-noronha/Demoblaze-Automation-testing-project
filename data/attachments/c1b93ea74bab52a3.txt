@@ -1,0 +1,12 @@
+Original: {
+  id: '3fdebdb7-c2e4-0fff-9cd3-4f581fc5482d',
+  cookie: 'VGVzdC11c2VyLWpvZWwxNzc1MDM0',
+  prod_id: 1,
+  flag: true
+}
+Modified: {
+  id: '3fdebdb7-c2e4-0fff-9cd3-4f581fc5482d',
+  cookie: 'VGVzdC11c2VyLWpvZWwxNzc1MDM0',
+  prod_id: 3,
+  flag: true
+}

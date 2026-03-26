@@ -1,0 +1,6 @@
+REQUEST: {
+  id: 'd391a095-17a6-96c0-b947-622a350fdfe7',
+  cookie: 'VGVzdC11c2VyLWpvZWwxNzc1MDMw',
+  prod_id: 1,
+  flag: true
+}

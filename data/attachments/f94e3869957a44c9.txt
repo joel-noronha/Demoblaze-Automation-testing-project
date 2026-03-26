@@ -1,0 +1,13 @@
+Original: {
+  id: '8c0c7413-acb2-60a4-b100-2dbc8f259161',
+  cookie: 'VGVzdC11c2VyLWpvZWwxNzc1MDM0',
+  prod_id: 1,
+  flag: true
+}
+Modified: {
+  id: '8c0c7413-acb2-60a4-b100-2dbc8f259161',
+  cookie: 'VGVzdC11c2VyLWpvZWwxNzc1MDM0',
+  prod_id: 3,
+  flag: true
+}
+Cart Products: [ 'Nexus 6', 'Nexus 6', 'Nexus 6', 'Samsung galaxy s6', 'Nexus 6' ]
