@@ -1,1 +1,0 @@
-[ 'Nexus 6', 'MacBook air', 'MacBook air' ]
