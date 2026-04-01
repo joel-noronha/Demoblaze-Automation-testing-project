@@ -4,11 +4,12 @@ import { HomePage } from "../pages/HomePage";
 test("filter products by category", async ({ page }) => {
   const home = new HomePage(page);
   await home.navigateToHome();
-  const filterText = "Monitors";
-  await page.getByRole("link", { name: `${filterText}` }).click();
-  const products = await page.locator("#tbodyid h4 a");
-  await products.first().waitFor();
-  const names = await products.allTextContents();
-  console.log(names);
+
+  await page.getByRole("link", { name: "Monitors", exact: true }).click();
+
+  await expect(page.locator("#tbodyid")).toContainText("Apple monitor 24");
+
+  const names = await page.locator("#tbodyid h4 a").allTextContents();
+
   expect(names).toContain("Apple monitor 24");
 });
