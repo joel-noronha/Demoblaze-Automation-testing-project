@@ -1,0 +1,13 @@
+Original: {
+  id: 'd7aa18b8-f810-4482-87f0-7fd875811a83',
+  cookie: 'VGVzdC11c2VyLWpvZWwxNzc2NzQx',
+  prod_id: 1,
+  flag: true
+}
+Modified: {
+  id: 'd7aa18b8-f810-4482-87f0-7fd875811a83',
+  cookie: 'VGVzdC11c2VyLWpvZWwxNzc2NzQx',
+  prod_id: 3,
+  flag: true
+}
+Cart Products: [ 'Nexus 6' ]
